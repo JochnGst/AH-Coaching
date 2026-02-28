@@ -22,7 +22,7 @@ export default function About() {
               src={Dumbbell}
               alt="Coach Portrait"
               fill
-              className="object-cover"
+              className="object-cover object-[30%_center]"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
