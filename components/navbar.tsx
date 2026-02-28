@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Logo from '@/assets/Logo.png';
 import RustyMetal from '@/assets/RustyMetal.png';
+import Metal from '@/assets/Metal.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +49,9 @@ export default function Navbar() {
             <Link
               href="#contact"
               style={{
-                backgroundImage: `url(${RustyMetal.src})`,
+                backgroundImage: `url(${Metal.src})`,
                 backgroundPosition: '20% 80%',
-                backgroundSize: '150%',
+                backgroundSize: '250%',
               }}
               className="px-6 py-2 text-white font-medium uppercase tracking-wider text-sm bg-black/20 bg-blend-multiply hover:brightness-125 transition-all duration-300 border border-gray-800 shadow-md"
             >
@@ -94,11 +95,11 @@ export default function Navbar() {
                 href="#contact"
                 onClick={() => setIsOpen(false)}
                 style={{
-                  backgroundImage: `url(${RustyMetal.src})`,
+                  backgroundImage: `url(${Metal.src})`,
                   backgroundPosition: '75% 20%',
-                  backgroundSize: '400%',
+                  backgroundSize: '300%',
                 }}
-                className="block w-full text-center px-6 py-3 text-white font-medium uppercase tracking-wider text-sm bg-black/35 bg-blend-multiply hover:brightness-125 transition-all duration-300 border border-gray-500 mt-4"
+                className="block w-full text-center px-6 py-3 text-white font-medium uppercase tracking-wider text-sm bg-black/45 bg-blend-multiply hover:brightness-125 transition-all duration-300 border border-gray-700 mt-4"
               >
                 Start Now
               </Link>
