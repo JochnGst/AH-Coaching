@@ -2,6 +2,8 @@
 
 import { motion } from 'motion/react';
 import { Dumbbell, Utensils, Activity, MessageCircle } from 'lucide-react';
+import RustyMetal from '@/assets/RustyMetal.png';
+import Metal from '@/assets/Metal.png';
 
 export default function Services() {
   const services = [
@@ -105,7 +107,12 @@ export default function Services() {
             </p>
             <a
               href="#contact"
-              className="px-10 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest text-sm hover-scratched-metal transition-all duration-300 relative z-10"
+              style={{
+                backgroundImage: `url(${Metal.src})`,
+                backgroundPosition: '25% 75%',
+                backgroundSize: '300%',
+              }}
+              className="px-10 py-4 text-white font-bold uppercase tracking-widest text-sm hover:brightness-125 transition-all duration-300 relative z-10 border border-gray-800 shadow-lg"
             >
               Apply Now
             </a>
