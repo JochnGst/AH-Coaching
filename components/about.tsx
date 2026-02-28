@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import RustyMetal from '@/assets/RustyMetal.png';
+import Dumbbell from '@/assets/DumbbellBackground.png';
 
 export default function About() {
   return (
@@ -18,7 +19,7 @@ export default function About() {
             className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-muted"
           >
             <Image
-              src="https://picsum.photos/seed/bodybuilder/800/1200?grayscale"
+              src={Dumbbell}
               alt="Coach Portrait"
               fill
               className="object-cover"
