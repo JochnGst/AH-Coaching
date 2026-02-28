@@ -1,9 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import Logo from '@/assets/Logo.png';
+import RustyMetal from '@/assets/RustyMetal.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +23,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="text-2xl font-bold tracking-tighter uppercase">
-              <span className="text-primary">AH</span>
-              <span className="text-muted-foreground ml-2 text-sm tracking-widest">Coaching</span>
+            <Link href="/">
+              <Image
+                src={Logo}
+                alt="AH Online Coaching"
+                height={128}
+                width={128}
+                className="object-contain drop-shadow-md"
+              />
             </Link>
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -39,7 +47,12 @@ export default function Navbar() {
             ))}
             <Link
               href="#contact"
-              className="px-6 py-2 border border-primary text-primary font-medium uppercase tracking-wider text-sm hover-scratched-metal"
+              style={{
+                backgroundImage: `url(${RustyMetal.src})`,
+                backgroundPosition: '20% 80%',
+                backgroundSize: '150%',
+              }}
+              className="px-6 py-2 text-white font-medium uppercase tracking-wider text-sm bg-black/20 bg-blend-multiply hover:brightness-125 transition-all duration-300 border border-gray-800 shadow-md"
             >
               Start Now
             </Link>
@@ -80,7 +93,12 @@ export default function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-6 py-3 border border-primary text-primary font-medium uppercase tracking-wider text-sm hover-scratched-metal mt-4"
+                style={{
+                  backgroundImage: `url(${RustyMetal.src})`,
+                  backgroundPosition: '75% 20%',
+                  backgroundSize: '400%',
+                }}
+                className="block w-full text-center px-6 py-3 text-white font-medium uppercase tracking-wider text-sm bg-black/35 bg-blend-multiply hover:brightness-125 transition-all duration-300 border border-gray-500 mt-4"
               >
                 Start Now
               </Link>

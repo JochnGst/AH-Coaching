@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '@/assets/Logo.png';
 
 export default function Footer() {
   return (
@@ -7,8 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-muted pb-12 mb-8">
           <div className="flex flex-col items-center md:items-start">
             <Link href="/" className="text-3xl font-black tracking-tighter uppercase mb-4">
-              <span className="text-primary">AH</span>
-              <span className="text-muted-foreground ml-2 text-sm tracking-widest">Coaching</span>
+                <Image
+                src={Logo}
+                alt="AH Online Coaching"
+                height={128}
+                width={128}
+                className="object-contain drop-shadow-md"
+              />
+              {/* <span className="text-primary">AH</span>
+              <span className="text-muted-foreground ml-2 text-sm tracking-widest">Coaching</span> */}
             </Link>
             <p className="text-muted-foreground text-sm font-light text-center md:text-left max-w-xs">
               Elite online bodybuilding coaching. Science-based programming, precise nutrition, and relentless accountability.

@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import RustyMetal from '@/assets/RustyMetal.png';
 
 export default function About() {
   return (
@@ -42,7 +43,14 @@ export default function About() {
             </h2>
             <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-8 text-primary">
               Built on Discipline. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600">
+              <span
+                className="text-transparent bg-clip-text"
+                style={{
+                  backgroundImage: `url(${RustyMetal.src})`,
+                  backgroundPosition: '70% 35%',
+                  backgroundSize: '150%',
+                }}
+              >
                 Forged by Iron.
               </span>
             </h3>

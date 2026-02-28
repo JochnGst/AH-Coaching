@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Mail, Instagram, MapPin } from 'lucide-react';
+import RustyMetal from '@/assets/RustyMetal.png';
 
 export default function Contact() {
   return (
@@ -127,7 +128,12 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest text-sm hover-scratched-metal transition-all duration-300 mt-4"
+                style={{
+                  backgroundImage: `url(${RustyMetal.src})`,
+                  backgroundPosition: '15% 75%',
+                  backgroundSize: '150%',
+                }}
+                className="w-full py-4 text-white font-bold uppercase tracking-widest text-sm hover:brightness-125 transition-all duration-300 mt-4 border border-gray-500 shadow-lg"
               >
                 Submit Application
               </button>

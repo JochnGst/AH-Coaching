@@ -3,22 +3,28 @@
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DumbbellBackground from '@/assets/DumbbellBackground.png';
+import Logo from '@/assets/Logo.png';
+import Metal from '@/assets/Metal.png';
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Background Image Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image - Blurred, scaled to hide blur edges */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ filter: 'blur(5px)', transform: 'scale(1.08)' }}
+      >
         <Image
-          src="https://picsum.photos/seed/gym/1920/1080?grayscale"
+          src={DumbbellBackground}
           alt="Gym Background"
           fill
-          className="object-cover opacity-20"
-          referrerPolicy="no-referrer"
+          className="object-cover opacity-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
       </div>
+      {/* Gradient overlay for text readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-background/75 to-background/40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         <motion.div
@@ -27,16 +33,28 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          {/* Logo Placeholder - Scratched Metal Effect */}
-          <div className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 rounded-full bg-scratched-metal flex items-center justify-center shadow-2xl border-4 border-muted/30">
-            <span className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500 drop-shadow-lg">
-              AH
-            </span>
+          {/* Logo */}
+          <div className="w-96 h-96 md:w-[512px] md:h-[312px] mx-auto mb-8">
+            <Image
+              src={Logo}
+              alt="AH Online Coaching"
+              width={512}
+              height={512}
+              className="w-full h-full object-contain drop-shadow-2xl"
+              priority
+            />
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-primary mb-4">
             Unleash Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700">
+            <span
+              className="text-transparent bg-clip-text"
+              style={{
+                backgroundImage: `url(${Metal.src})`,
+                backgroundPosition: '50% 35%',
+                backgroundSize: '150%',
+              }}
+            >
               True Potential
             </span>
           </h1>
@@ -53,7 +71,12 @@ export default function Hero() {
         >
           <Link
             href="#contact"
-            className="px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest text-sm hover-scratched-metal transition-all duration-300 w-full sm:w-auto text-center"
+            style={{
+              backgroundImage: `url(${Metal.src})`,
+              backgroundPosition: '10% 10%',
+              backgroundSize: '400%',
+            }}
+            className="px-8 py-4 text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 w-full sm:w-auto text-center hover:brightness-125 shadow-lg border border-gray-800"
           >
             Apply for Coaching
           </Link>
